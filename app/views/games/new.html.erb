@@ -1,0 +1,18 @@
+<h1>Longest Word Guess Game</h1>
+
+<p>Given shuffled letters:
+<% @letters.each do |letter| %>
+    <div style="display:inline-block; margin-left:10px; border:1px black; ">
+    <%= letter %></div>
+    <% end %> </p>
+
+
+<form action="/score" method="post">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      <div class="form-group">
+        <label for="word">What is the longest word you can find ?</label>
+        <input type="text" name="word" class="form-control">
+        <%= hidden_field_tag :letters, @letters %>
+    <input type="submit" value="play" class="btn btn-primary">
+</form>
+ 

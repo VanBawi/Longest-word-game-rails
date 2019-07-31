@@ -1,0 +1,15 @@
+<h1 class="title">Result</h1>
+
+ <% if @grid_word %>
+    <li class="valid"><strong>Oops. </strong><i><%= @word %></i> is from the list but not a valid English word.</li>
+  <% else %>
+    <li class="error">Sorry <i><%= @word %></i> is <strong>NOT</strong> from the list.</li>
+  <% end %>
+
+   <% if @english_word %>
+    <li class="valid"><strong>Congratulations ! </strong><i><%= @word %></i> is a valid english word</li>
+  <% else %>
+    <li class="error">Sorry <i><%= @word %></i> is <strong>NOT</strong> a valid english word</li>
+<%end%>
+
+<%= link_to 'Play again', 'new' %>
